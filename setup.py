@@ -35,6 +35,7 @@ setup(
     description='Apply discounts and permissions to account groups based on email suffix, eg. ".edu."',
     install_requires=requirements,
     license="GNU General Public License v3",
+    long_description=readme,
     # long_description=readme + '\n\n' + history,
     include_package_data=True,
     keywords='tendenci-group-on-email',
@@ -44,6 +45,6 @@ setup(
     # test_suite='tests',
     # tests_require=test_requirements,
     url='https://github.com/BenSturmfels/tendenci-group-on-email',
-    version='0.1.2',
+    version='0.1.3',
     zip_safe=False,
 )
