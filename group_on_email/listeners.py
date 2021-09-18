@@ -29,19 +29,19 @@ def _get_or_create_email_group(suffix):
 def reset_email_group(suffix=SUFFIX):
     """Clear an regenerate the group members for this suffix."""
     group = _get_or_create_email_group(suffix);
-    logger.info('Clearing group: {}.'.format(group))
+    logger.info(f'Clearing group: {group}.')
     GroupMembership.objects.filter(group=group).delete()
     users = User.objects.filter(email__iendswith=suffix)
     for user in users:
         GroupMembership.add_to_group(member=user, group=group)
-        logger.info('Added {} to group {}.'.format(user, group))
+        logger.info(f'Added {user} to group {group}.')
 
 
 @receiver(post_save, sender=User)
 def user_saved(sender, **kwargs):
     """Update email group membership on User save."""
     user = kwargs['instance']
-    logger.info('User saved: {}'.format(user))
+    logger.info(f'User saved: {user}')
     group = _get_or_create_email_group(SUFFIX)
     if user.email.endswith(SUFFIX):
         try:
@@ -49,7 +49,7 @@ def user_saved(sender, **kwargs):
         except IntegrityError:
             pass
         else:
-            logger.info('Added {} to group {}.'.format(user, group))
+            logger.info(f'Added {user} to group {group}.')
     else:
         GroupMembership.objects.filter(member=user, group=group).delete()
-        logger.info('Removed {} from group {}.'.format(user, group))
+        logger.info(f'Removed {user} from group {group}.')

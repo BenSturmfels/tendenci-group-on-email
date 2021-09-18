@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 """The setup script."""
 
@@ -26,8 +25,6 @@ setup(
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Natural Language :: English',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
     ],
     description='Apply discounts and permissions to account groups based on email suffix, eg. ".edu."',
@@ -43,6 +40,6 @@ setup(
     # test_suite='tests',
     # tests_require=test_requirements,
     url='https://github.com/BenSturmfels/tendenci-group-on-email',
-    version='0.1.7',
+    version='0.1.8',
     zip_safe=False,
 )
