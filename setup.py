@@ -42,7 +42,7 @@ setup(
     # setup_requires=setup_requirements,
     # test_suite='tests',
     # tests_require=test_requirements,
-    url='https://github.com/bsturmfels/tendenci-group-on-email',
-    version='0.1.6',
+    url='https://github.com/BenSturmfels/tendenci-group-on-email',
+    version='0.1.7',
     zip_safe=False,
 )
