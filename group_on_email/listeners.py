@@ -10,6 +10,7 @@ logger = logging.getLogger(__name__)
 
 SUFFIX = '.edu'
 
+
 def _get_or_create_email_group(suffix):
     """Create a system generated group for this suffix."""
     try:
